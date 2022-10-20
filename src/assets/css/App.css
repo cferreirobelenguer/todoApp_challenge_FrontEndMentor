@@ -1,0 +1,29 @@
+
+/* FONT */
+@font-face {
+    font-family: "josefin";
+    src: url("../fonts/josefin.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+/*LIGHT*/
+
+.light_container{
+    background-color: black;
+    background-image:url("../images/bg-desktop-light.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.ligth_container_container{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.light_container_title{
+    color:white;
+    font-size:2vw;
+}
