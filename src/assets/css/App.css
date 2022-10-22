@@ -7,23 +7,148 @@
     font-weight: normal;
 }
 
-/*LIGHT*/
+/*BOTON*/
+
+.boton{
+    background-color: transparent;
+    border-style: solid;
+    border-color: transparent;
+    float: right;
+}
+
+/*lIGHT*/
+.inputContainer{
+    width: 30vw;
+    height: 2.8vw;
+    border-style: solid;
+    border-color: white;
+}
 
 .light_container{
-    background-color: black;
+    background-color: white;
     background-image:url("../images/bg-desktop-light.jpg");
-    background-size: cover;
+    background-size: auto 250px;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position:initial;
+    display: grid;
+    grid-template-areas: "title moon"
+                        "input input";
+    grid-template-columns: 20vw 20vw;
+    grid-template-rows: auto auto 50vw 50vw;
+    justify-content: center;
+    align-items: center;
+    grid-gap:5px;
+    padding:70px;
 }
 
-.ligth_container_container{
-    display:flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-.light_container_title{
+.light_container_icon{
+    width: 2vw;
+    height: 2vw;
     color:white;
-    font-size:2vw;
+}
+
+.light_container_title{
+    justify-content: center;
+    color:white;
+    font-size:1.5vw;
+    grid-area: title;
+    
+}
+.light_container_input{
+    padding: 5px;
+    position: relative;
+    grid-area: input;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    
+}
+
+.light_container_circle{
+    opacity: 0.4;
+    width: 20px;
+    height: 20px;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    width:1vw;
+    height:1vw;
+    border-radius:50%;
+    border: solid 1px rgb(61, 61, 61);
+    overflow:hidden;
+}
+.light_container_button{
+    grid-area: moon;
+    
+}
+
+/*DARK*/
+.inputContainer_dark{
+    width: 30vw;
+    height: 2.8vw;
+    border-style: solid;
+    background-color: #24273D;
+    border-color: #24273D;
+}
+
+.dark_container{
+    background-color: #181824;
+    background-image:url("../images/bg-desktop-dark.jpg");
+    background-attachment: fixed;
+    background-size: auto 250px;
+    background-repeat: no-repeat;
+    background-position:initial;
+    display: grid;
+    grid-template-areas: "title moon"
+                        "input input";
+    grid-template-columns: 20vw 20vw;
+    grid-template-rows: auto auto 50vw 50vw;
+    justify-content: center;
+    align-items: center;
+    grid-gap:5px;
+    padding:70px;
+}
+
+.dark_container_icon{
+    width: 2vw;
+    height: 2vw;
+    color:white;
+}
+
+.dark_container_title{
+    justify-content: center;
+    color:white;
+    font-size:1.5vw;
+    grid-area: title;
+    
+}
+.dark_container_input{
+    color:rgb(116, 115, 115);
+    padding: 5px;
+    position: relative;
+    grid-area: input;
+    background-color: #24273D;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 5px 5px 40px #0F1019;
+}
+
+.dark_container_circle{
+    opacity: 0.2;
+    width: 20px;
+    height: 20px;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    width:1vw;
+    height:1vw;
+    border-radius:50%;
+    border: solid 1px rgb(116, 115, 115);
+    overflow:hidden;
+}
+.dark_container_button{
+    grid-area: moon;
+    
 }
