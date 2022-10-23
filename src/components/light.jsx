@@ -3,6 +3,7 @@ import moon from "../assets/images/icon-moon.svg"
 import Dark from "../components/dark"
 import { agregarDatos_ } from "../store/action"
 import { useDispatch, useSelector } from "react-redux"
+import axios from "axios"
 
 
 var datoValor=[]
@@ -22,12 +23,17 @@ const Light=()=>{
         setBotonMoon(true)
         
     }
-    //Se reciben datos de los input de los componentes dark y light y se unifican en un único state
+    //Se reciben datos del input y se lleva a data.json
     const recibirDatos=()=>{
         
         const infoValor=info.current.value
-        datoValor=infoValor
-        agregarDatos(datoValor)
+        
+        axios.post("http://localhost:5000/add/",{
+            data:infoValor
+        })
+        .then(res=>{
+            console.log(res)
+        })
         
     }
 

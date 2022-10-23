@@ -9,7 +9,16 @@ var bodyParser=require('body-parser');
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
-
+//Configuración del CORS
+app.use((req,res,next)=>{
+    //Permitimos el control de acceso para que cualquier cliente pueda hacer peticiones ajax
+    res.header('Access-Control-Allow-Origin','*');
+    res.header('Access-Control-Allow-Headers', 'Authorization, x-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Controll-Allow-Request-Method');
+    //Permitimos métodos http
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+    res.header('Allow', 'GET, POST, OPTIONS, PUT , DELETE');
+    next();
+});
 
 const getData = () => {
     //Coge los datos existentes en data.json
