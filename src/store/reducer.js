@@ -4,7 +4,7 @@ import {AGREGAR_DATOS } from '../store/types';
 // Objeto con array que es el listado de las tareas
 
 const dataInicial = {
-    listado:[]
+    listado:""
 };
 
 

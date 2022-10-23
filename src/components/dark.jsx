@@ -24,9 +24,7 @@ const Dark=()=>{
     const recibirDatos=()=>{
         
         const infoValor=info.current.value
-        datoValor=listadoTotal
-        
-        datoValor.push(infoValor)
+        datoValor=infoValor
         agregarDatos(datoValor)
 
     }

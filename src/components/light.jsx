@@ -26,15 +26,12 @@ const Light=()=>{
     const recibirDatos=()=>{
         
         const infoValor=info.current.value
-        //Primero datoValor se actualiza con los datos del state
-        datoValor=listadoTotal
-        
-        datoValor.push(infoValor)
+        datoValor=infoValor
         agregarDatos(datoValor)
         
     }
 
-    console.log(listadoTotal)
+    
     //Si se pulsa el botón se llama al componente Dark
     if(botonMoon){
         return <Dark></Dark>
