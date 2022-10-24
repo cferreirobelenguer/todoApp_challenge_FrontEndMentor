@@ -3,26 +3,32 @@ import moon from "../assets/images/icon-moon.svg"
 import Dark from "../components/dark"
 import { agregarDatos_ } from "../store/action"
 import { useDispatch, useSelector } from "react-redux"
+import ListadoLight from "./listadoLight"
 import axios from "axios"
 
-
+//Valores iniciales de los state
 var datoValor=[]
+
 
 
 const Light=()=>{
     const [botonMoon, setBotonMoon]=useState(false)
     
-
     const dispatcher=useDispatch();
+    //state listado con los resultados de la lista
     const listadoTotal=useSelector(state=>state.listado);
     const agregarDatos=()=>dispatcher(agregarDatos_(datoValor));
     const info=useRef();
+    
+    
 
     const mostrarDark=()=>{
         //Cuando se presiona el botón de la luna se pasa al modo dark
         setBotonMoon(true)
         
+        
     }
+    //console.log("botonMoon: "+botonMoon)
     //Se reciben datos del input y se lleva a data.json
     const recibirDatos=()=>{
         
@@ -37,7 +43,26 @@ const Light=()=>{
         
     }
 
+    const mostrarDatos=()=>{
+        axios.get(
+            "http://localhost:5000/list/"
+        )
+        .then(res=>{
+            datoValor=res.data
+            agregarDatos(datoValor)
+        })
+        console.log(listadoTotal)
+    }
     
+    
+    const eliminarDatos=()=>{
+
+    }
+
+    const modificarDatos=()=>{
+
+    }
+
     //Si se pulsa el botón se llama al componente Dark
     if(botonMoon){
         return <Dark></Dark>
@@ -59,15 +84,19 @@ const Light=()=>{
                 <div className="light_container_circle"></div>
                 
             </div>
-            <button onClick={recibirDatos}>Enviar</button>
+            <div className="container_tareas_light">
+                <ListadoLight></ListadoLight>
+            </div>
+            <div className="dark_btn">
+                    <button onClick={recibirDatos}>Save</button>
+                    <button onClick={mostrarDatos}>All</button>
+                    <button onClick={eliminarDatos}>Clear</button>
+                    <button onClick={modificarDatos}>Modify</button>
+            </div>
+            
         </div>
     )
     }
 }
-//we connect the global state in form component
-const mapStateToProps=(state)=>{
-    return{
-        listadoTotal:state.datos,
-    }
-}
+
 export default Light;

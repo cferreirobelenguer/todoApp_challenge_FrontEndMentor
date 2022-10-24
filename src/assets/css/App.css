@@ -32,7 +32,9 @@
     background-position:initial;
     display: grid;
     grid-template-areas: "title moon"
-                        "input input";
+                        "input input"
+                        
+                        ;
     grid-template-columns: 20vw 20vw;
     grid-template-rows: auto auto 50vw 50vw;
     justify-content: center;
@@ -81,6 +83,23 @@
 .light_container_button{
     grid-area: moon;
     
+}
+.container_tareas_light{
+    
+    margin-top: 20px;
+    background-color: white;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    
+}
+.light_btn{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
 }
 
 /*DARK*/
@@ -152,3 +171,17 @@
     grid-area: moon;
     
 }
+.container_tareas_dark{
+    
+    width: 35vw;
+    color: rgb(116, 115, 115);
+    background-color: #24273D;
+    
+}
+.dark_btn{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+}
+
