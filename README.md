@@ -5,6 +5,7 @@ en la que pulsando a un botón se pasa de modo Light a Dark, y se pueden ver, al
 
 ## TECNOLOGÍAS USADAS
   ### React como librería de frontend
+  ### Redux como librería para crear un estado general para todos los controladores
   ### Json como base de datos
   ### NodeJS Express como servidor backend
   ### css : grid y flexbox
