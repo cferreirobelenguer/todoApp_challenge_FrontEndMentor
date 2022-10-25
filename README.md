@@ -7,7 +7,7 @@ en la que pulsando a un botón se pasa de modo Light a Dark, y se pueden ver, al
   ### React como librería de frontend
   ### Redux como librería para crear un estado general para todos los controladores
   ### Json como base de datos
-  ### NodeJS Express como servidor backend
+  ### NodeJS Express como servidor backend para crear CRUD
   ### css : grid y flexbox
   ### git/github: trabajando con ramas
   ### axios para realizar las peticiones ajax
