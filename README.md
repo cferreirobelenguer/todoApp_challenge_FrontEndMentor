@@ -4,11 +4,11 @@ Proyecto basado en un challenge de Frontend Mentor, consiste en una web responsi
 en la que pulsando a un botón se pasa de modo Light a Dark, y se pueden ver, almacenar y eliminar datos de una lista de tareas.
 
 ## TECNOLOGÍAS USADAS
-React como librería de frontend
-Json como base de datos
-NodeJS Express como servidor backend
-css : grid y flexbox
-git/github: trabajando con ramas
+  ### React como librería de frontend
+  ### Json como base de datos
+  ### NodeJS Express como servidor backend
+  ### css : grid y flexbox
+  ### git/github: trabajando con ramas
 
 ## VISTA CLARA ESCRITORIO
 
