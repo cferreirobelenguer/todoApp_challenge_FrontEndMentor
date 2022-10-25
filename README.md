@@ -8,7 +8,7 @@ React como librería de frontend
 Json como base de datos
 NodeJS Express como servidor backend
 css : grid y flexbox
-
+git/github: trabajando con ramas
 
 ## VISTA CLARA ESCRITORIO
 
