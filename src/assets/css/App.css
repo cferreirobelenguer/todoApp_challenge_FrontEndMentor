@@ -17,6 +17,47 @@
 }
 
 /*lIGHT*/
+.light_tareas{
+    margin-top: 50px;
+    padding: 20px;
+    grid-area:tareas;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    margin:0;
+    border-radius: 10px;
+    font-size:2vw;
+    opacity: 0.9;
+    color:rgb(116, 115, 115);
+    font-family: "josefin";
+
+    
+    
+}
+/*Estilos de los botones light*/
+.light_btn{
+    margin-top: 40px;
+}
+.style_btn{
+    background-color: white;
+    
+    color:rgb(116, 115, 115);
+    border-radius: 10px;
+    font-size: 2vw;
+    border-style: none;
+    border-color: transparent;
+}
+.style_btn:hover{
+    background-color: white;
+    color: #5943CA;
+    border-radius: 10px;
+    font-size: 2vw;
+    border-style: none;
+    border-color: transparent;
+}
+/* estilos grid light*/
 .inputContainer{
     width: 30vw;
     height: 2.8vw;
@@ -33,14 +74,16 @@
     display: grid;
     grid-template-areas: "title moon"
                         "input input"
-                        
+                        "tareas tareas"
                         ;
     grid-template-columns: 20vw 20vw;
-    grid-template-rows: auto auto 50vw 50vw;
+    grid-template-rows: auto auto 50vw 50vw 150vw 150vw;
     justify-content: center;
     align-items: center;
-    grid-gap:5px;
-    padding:70px;
+    grid-gap:10px;
+    padding-top:70px;
+    padding-left:70px;
+    padding-right:70px;
 }
 
 .light_container_icon{
@@ -84,25 +127,66 @@
     grid-area: moon;
     
 }
-.container_tareas_light{
-    
-    margin-top: 20px;
-    background-color: white;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    
-}
+
 .light_btn{
     display: flex;
     flex-direction: row;
     justify-content:space-around;
     align-items: center;
 }
+.tareaLight:hover{
+    color: #5943CA;
+
+}
 
 /*DARK*/
+
+.dark_tareas{
+    margin-top: 50px;
+    padding: 20px;
+    grid-area:tareas;
+    background-color: #24273D;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    margin:0;
+    border-radius: 10px;
+    font-size:2vw;
+    opacity: 0.9;
+    color:rgb(116, 115, 115);
+    font-family: "josefin";
+
+    
+    
+}
+.tareaDark:hover{
+    color: #5943CA;
+
+}
+
+/*Estilos de los botones dark*/
+.dark_btn{
+    margin-top: 40px;
+}
+.style_btn_dark{
+    background-color: #24273D;
+    
+    color:rgb(116, 115, 115);
+    border-radius: 10px;
+    font-size: 2vw;
+    border-style: none;
+    border-color: transparent;
+}
+.style_btn_dark:hover{
+    background-color: #24273D;
+    color: #5943CA;
+    border-radius: 10px;
+    font-size: 2vw;
+    border-style: none;
+    border-color: transparent;
+}
+/*Estilos grid dark*/
 .inputContainer_dark{
     width: 30vw;
     height: 2.8vw;
@@ -120,7 +204,8 @@
     background-position:initial;
     display: grid;
     grid-template-areas: "title moon"
-                        "input input";
+                        "input input"
+                        "tareas tareas";
     grid-template-columns: 20vw 20vw;
     grid-template-rows: auto auto 50vw 50vw;
     justify-content: center;
@@ -171,13 +256,7 @@
     grid-area: moon;
     
 }
-.container_tareas_dark{
-    
-    width: 35vw;
-    color: rgb(116, 115, 115);
-    background-color: #24273D;
-    
-}
+
 .dark_btn{
     display: flex;
     flex-direction: row;

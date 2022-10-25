@@ -5,6 +5,7 @@ import { agregarDatos_ } from "../store/action"
 import { useDispatch, useSelector } from "react-redux"
 import ListadoDark from "./listadoDark"
 import axios from "axios"
+import Swal from "sweetalert2"
 
 //Valores iniciales de los state
 var datoValor=[]
@@ -28,13 +29,20 @@ const Dark=()=>{
     //Se reciben datos del input y se lleva a data.json
     const recibirDatos=()=>{
         
-        const infoValor=info.current.value
+        var infoValor=info.current.value
         
         axios.post("http://localhost:5000/add/",{
             data:infoValor
         })
         .then(res=>{
             console.log(res)
+        })
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Your task has been saved',
+            showConfirmButton: false,
+            timer: 1500
         })
         
     }
@@ -51,12 +59,24 @@ const Dark=()=>{
     }
     
     const eliminarDatos=()=>{
-
+        var infoValor=info.current.value
+        axios.delete(
+            "http://localhost:5000/delete/"+infoValor
+        )
+        .then(res=>{
+            console.log(res.data)
+            
+        })
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Your task has been deleted',
+            showConfirmButton: false,
+            timer: 1500
+        })
     }
 
-    const modificarDatos=()=>{
 
-    }
     //Si se pulsa botón se llama al componente Light
     if(botonSun){
         return <Light></Light>
@@ -77,15 +97,18 @@ const Dark=()=>{
                 <div className="dark_container_circle"></div>
                 
             </div>
-            <div className="container_tareas_dark">
-                <ListadoDark></ListadoDark>
+            <div className="dark_tareas">
+                <div className="container_tareas_dark">
+                    <ListadoDark></ListadoDark>
+                </div>
+                <div className="dark_btn">
+                    <button className="style_btn_dark"onClick={recibirDatos}>Save</button>
+                    <button className="style_btn_dark" onClick={mostrarDatos}>All</button>
+                    <button className="style_btn_dark" onClick={eliminarDatos}>Clear</button>
+                    
+                </div>
             </div>
-            <div className="dark_btn">
-                    <button onClick={recibirDatos}>Save</button>
-                    <button onClick={mostrarDatos}>All</button>
-                    <button onClick={eliminarDatos}>Clear</button>
-                    <button onClick={modificarDatos}>Modify</button>
-            </div>
+            
             
         </div>
     )

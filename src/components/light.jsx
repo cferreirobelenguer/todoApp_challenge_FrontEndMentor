@@ -5,6 +5,7 @@ import { agregarDatos_ } from "../store/action"
 import { useDispatch, useSelector } from "react-redux"
 import ListadoLight from "./listadoLight"
 import axios from "axios"
+import Swal from "sweetalert2"
 
 //Valores iniciales de los state
 var datoValor=[]
@@ -40,6 +41,13 @@ const Light=()=>{
         .then(res=>{
             console.log(res)
         })
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Your task has been saved',
+            showConfirmButton: false,
+            timer: 1500
+        })
         
     }
 
@@ -56,11 +64,21 @@ const Light=()=>{
     
     
     const eliminarDatos=()=>{
-
-    }
-
-    const modificarDatos=()=>{
-
+        var infoValor=info.current.value
+        axios.delete(
+            "http://localhost:5000/delete/"+infoValor
+        )
+        .then(res=>{
+            console.log(res.data)
+            
+        })
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Your task has been deleted',
+            showConfirmButton: false,
+            timer: 1500
+        })
     }
 
     //Si se pulsa el botón se llama al componente Dark
@@ -68,33 +86,35 @@ const Light=()=>{
         return <Dark></Dark>
     }else{
     return(
-
-        <div className="light_container">
+        
+            <div className="light_container">
     
-            <div className="light_container_title">
-                <h1>TODO</h1>
-            </div>
-            <div className="light_container_button">
-                <button className="boton" onClick={mostrarDark}><img src={moon} className="light_container_icon" alt="imagen_boton_claro"></img></button>
-            </div>
+                <div className="light_container_title">
+                    <h1>TODO</h1>
+                </div>
+                <div className="light_container_button">
+                    <button className="boton" onClick={mostrarDark}><img src={moon} className="light_container_icon" alt="imagen_boton_claro"></img></button>
+                </div>
             
-            <div className="light_container_input">
+                <div className="light_container_input">
                 
-                <input type="text" className="inputContainer" ref={info}  placeholder="Create a new todo..."></input>
-                <div className="light_container_circle"></div>
-                
-            </div>
-            <div className="container_tareas_light">
-                <ListadoLight></ListadoLight>
-            </div>
-            <div className="dark_btn">
-                    <button onClick={recibirDatos}>Save</button>
-                    <button onClick={mostrarDatos}>All</button>
-                    <button onClick={eliminarDatos}>Clear</button>
-                    <button onClick={modificarDatos}>Modify</button>
-            </div>
+                    <input type="text" className="inputContainer" ref={info}  placeholder="Create a new todo..."></input>
+                    <div className="light_container_circle"></div>
+                </div>
+                <div class="light_tareas">
+                    <div className="container_tareas_light">
+                        <ListadoLight></ListadoLight>
+                    </div>
+                    <div className="light_btn">
+                        <button className="style_btn" onClick={recibirDatos}>Save</button>
+                        <button className="style_btn" onClick={mostrarDatos}>All</button>
+                        <button className="style_btn" onClick={eliminarDatos}>Clear</button>
+                        
             
-        </div>
+                    </div>
+            </div>
+            </div>
+        
     )
     }
 }

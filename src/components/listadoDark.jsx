@@ -7,13 +7,16 @@ const ListadoDark=()=>{
     //state listado con los resultados de la lista
     const listadoTotal=useSelector(state=>state.listado);
     
-
+  
+    //Se visualiza la lista
     return(
         <div className="container_tareas_dark">
                 {listadoTotal.map((i)=>{
                     return(
+                        
                         <div className="darkTareas">
-                            {i}
+                        
+                            <span className="tareaDark" >{i}</span>
                         </div>
                     )
                 })}
