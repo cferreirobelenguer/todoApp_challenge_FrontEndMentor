@@ -9,6 +9,7 @@ en la que pulsando a un botón se pasa de modo Light a Dark, y se pueden ver, al
   ### NodeJS Express como servidor backend
   ### css : grid y flexbox
   ### git/github: trabajando con ramas
+  ### axios para realizar las peticiones ajax
 
 
 ## VISTA CLARA ESCRITORIO
